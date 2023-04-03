@@ -31,6 +31,7 @@ export const ShowTasks = () => {
                 <tr>
                     <th>Task</th>
                     <th>Description</th>
+                    <th>Delivery Date</th>
                     <th>State</th>
                     <th>Action</th>
                 </tr>
@@ -41,8 +42,10 @@ export const ShowTasks = () => {
                     <td> {task.title} </td>
                     <td> {task.content} </td>
                     <td> {task.date} </td>
+                    <td> {task.state} </td>
                     <td>
-                    <Link to={'/edit/${task.id}'} className='btn btn-warning'>Edit</Link>
+                    <Link to={'/end/${task.id}'} className='btn btn-primary'>End</Link>
+                    <Link to={'/edit/${task.id}'} className='btn btn-secondary'>Edit</Link>
                     <button onClick={ ()=>deleteTask(task.id)} className='btn btn-danger'> Delete </button>
                     </td>
                 </tr>
