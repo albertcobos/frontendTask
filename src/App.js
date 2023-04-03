@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
+
+//importar nuestros componentes
+import { ShowTasks } from './componentes/ShowTasks';
+//import { CreateTask } from './componentes/CreateTask';
+//import { EditTask} from './componentes/EditTask';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<ShowTasks/>}/>
+          {/* <Route path='/create' element={<CreateTask/>}/> */}
+          {/* <Route path='/edit/:id' element={<EditTask/>}/> */}
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
