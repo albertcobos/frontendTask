@@ -16,7 +16,10 @@ export const ShowTasks = () => {
     console.log(response.data)
   }
 
-  
+  const editState=async(id) =>{
+    await axios.patch('$http://localhost:8000/api/task/${id}')
+    getAllTasks()
+  }
   const deleteTask=async(id) =>{
     await axios.delete('$http://localhost:8000/api/task/${id}')
     getAllTasks()
@@ -46,6 +49,7 @@ export const ShowTasks = () => {
                     <td>
                     <Link to={'/end/${task.id}'} className='btn btn-primary'>End</Link>
                     <Link to={'/edit/${task.id}'} className='btn btn-secondary'>Edit</Link>
+                    <button onClick={ ()=>editState(task.id)} className='btn btn-danger'> Cambiar Estado </button>
                     <button onClick={ ()=>deleteTask(task.id)} className='btn btn-danger'> Delete </button>
                     </td>
                 </tr>

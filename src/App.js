@@ -5,6 +5,8 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import { ShowTasks } from './components/ShowTasks';
 import { CreateTask } from './components/CreateTask';
 //import { EditTask} from './componentes/EditTask';
+import { LoginTask } from './components/LoginTask';
+
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
      
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<ShowTasks/>}/>
+          <Route path='/' element={<LoginTask/>}/>
+          <Route path='show' element={<ShowTasks/>}/>
+          
           <Route path='/create' element={<CreateTask/>}/> 
           {/* <Route path='/edit/:id' element={<EditTask/>}/> */}
         </Routes>
