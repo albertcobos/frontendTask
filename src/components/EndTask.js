@@ -4,13 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 const endpoint = 'http://localhost:8000/api/login'
 
-export const LoginTask = () => {
+export const EndTask = () => {
 
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('') 
-const [error, setError] = useState('')
-
-
 const navigate = useNavigate()   
 
  const store = async (e) =>{
@@ -19,17 +16,14 @@ const navigate = useNavigate()
        localStorage.setItem("Token",response.data)
         window.location = '/show'
     }).catch(error => {
-        setError({error})
-        /*this.setState
+        this.setState
         ({
             error : true,
-            errorMsj:error.response.data.Error,
-            setError({errorMsj})
-        })*/
-});
+            errorMsj:error.response.data.Error
+        })
 
-
-
+})  // hasta aca
+    
     navigate('/')
 } 
 
@@ -58,6 +52,7 @@ const navigate = useNavigate()
             </div>
             <button type='submit' className='btn btn-primary'>Login</button>
         </form>
+
     </div>
   )
 }

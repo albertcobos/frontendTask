@@ -14,7 +14,7 @@ export const CreateTask = () => {
     const store = async (e) =>{
         e.preventDefault()
         await axios.post(endpoint,{title: title, content:content , date:date, state:state})
-        navigate('/')
+        navigate('/show')
     }
     return (
     <div>
